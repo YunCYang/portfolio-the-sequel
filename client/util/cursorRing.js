@@ -24,7 +24,7 @@ const cursorRing = () => {
   const renderRing = () => {
     ringX = trace(ringX, cursorX, 0.2);
     ringY = trace(ringY, cursorY, 0.2);
-    ring[0].style.transform = `translate(${ringX - 21}px, ${ringY - 21}px)`;
+    ring[0].style.transform = `translate(${ringX - 25}px, ${ringY - 25}px)`;
     requestAnimationFrame(renderRing);
   };
   requestAnimationFrame(renderRing);

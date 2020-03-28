@@ -8,6 +8,9 @@ const App = () => {
   return (
     <div>
       <div className='pointer-ring'></div>
+      <center>
+        <h1 style={{ color: 'white' }}>Test</h1>
+      </center>
     </div>
   );
 };
