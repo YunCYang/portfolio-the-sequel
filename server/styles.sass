@@ -22,11 +22,44 @@ body
 
 .pointer-ring
   position: absolute
-  left: 0
-  top: 0
+  display: none
+  left: 0px
+  top: 0px
   z-index: 10
-  height: 50px
-  width: 50px
+  height: 20px
+  width: 20px
   border-radius: 100%
-  background: radial-gradient(circle farthest-side, transparent 90%, rgba(255, 255, 255, 0.8) 95%)
+  background: radial-gradient(circle farthest-side, transparent 75%, rgba(255, 255, 255, 0.7) 85%)
   mix-blend-mode: difference
+  pointer-events: none
+
+.nav-icon
+  z-index: 2
+  width: 25px
+  margin: 20px
+  cursor: url('./images/cursor.svg') 4 4, pointer
+
+  &__bar,
+  &::before,
+  &::after
+    height: 5px
+    background-color: #fff
+    border-radius: 3px
+    content: ''
+    display: block
+    margin: 5px 0
+    transition: all .3s ease-in-out
+
+  &.open
+    .nav-icon__bar
+      transform: scale(0)
+
+    &::after
+      transform: translateY(-10px) rotate(-135deg)
+
+    &::before
+      transform: translateY(10px) rotate(135deg)
+
+@media screen and ( max-width: 1024px ) and ( max-height: 1366px )
+  .pointer-ring
+    display: none !important
