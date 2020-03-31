@@ -1,6 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import store from '../redux/store';
+// import { useSelector } from 'react-redux';
 import cursorRing from '../util/cursorRing';
 import Header from './header';
 import Home from './home';
@@ -11,22 +10,50 @@ import Footer from './footer';
 import Menu from './menu';
 
 const App = () => {
+  // const isMenuOpen = useSelector(state => state.showMenu);
 
-  cursorRing();
+  React.useEffect(
+    () => {
+      cursorRing();
+    }, []
+  );
 
-  return (
-    <Provider store={store}>
-      <main>
-        <div className='pointer-ring'></div>
-        <Header />
+  const renderPage = () => {
+    // if (!isMenuOpen) {
+    //   return (
+    //     <>
+    //       <Home />
+    //       <Project />
+    //       <About />
+    //       <Contact />
+    //       <Footer />
+    //     </>
+    //   );
+    // } else {
+    //   return (
+    //     <>
+    //       <Menu />
+    //     </>
+    //   );
+    // }
+    return (
+      <>
+        <Menu />
         <Home />
         <Project />
         <About />
         <Contact />
         <Footer />
-        <Menu />
-      </main>
-    </Provider>
+      </>
+    );
+  };
+
+  return (
+    <main>
+      <div className='pointer-ring'></div>
+      <Header />
+      {renderPage()}
+    </main>
   );
 };
 
