@@ -22,8 +22,8 @@ const cursorRing = () => {
   const trace = (ori, pos, per) => (1 - per) * ori + per * pos;
 
   const renderRing = () => {
-    ringX = trace(ringX, cursorX, 0.15);
-    ringY = trace(ringY, cursorY, 0.15);
+    ringX = trace(ringX, cursorX, 0.2);
+    ringY = trace(ringY, cursorY, 0.2);
     ring[0].style.transform = `translate(${ringX - 10}px, ${ringY - 10}px)`;
     if (ringX !== 0 && ringY !== 0) ring[0].style.display = 'block';
     // console.log(ring[0].style.cursor);

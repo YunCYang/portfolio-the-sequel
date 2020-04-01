@@ -14,6 +14,14 @@ const Header = () => {
         () => {
           dispatch({ type: SHOW_MENU, payload: !isMenuOpen });
         }
+      } onMouseOver={
+        () => {
+          document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+        }
+      } onMouseLeave={
+        () => {
+          document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+        }
       }>
         <div className='nav-icon__bar'></div>
       </div>

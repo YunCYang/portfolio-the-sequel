@@ -30,9 +30,19 @@ body
   height: 20px
   width: 20px
   border-radius: 100%
-  background: radial-gradient(circle farthest-side, transparent 75%, rgba(255, 255, 255, 0.7) 85%)
+  background: radial-gradient(circle farthest-side, transparent 75%, rgba(255, 255, 255, 1) 85%)
   mix-blend-mode: difference
   pointer-events: none
+
+  &.link
+    height: 40px
+    width: 40px
+    background: radial-gradient(circle farthest-side, transparent 65%, rgba(255, 255, 255, 1) 75%)
+    left: -10px
+    top: -10px
+    transition-property: height width background
+    transition-duration: 50ms
+    transition-timing-function: ease-in-out
 
 header
   z-index: 2
@@ -52,7 +62,7 @@ header
     content: ''
     display: block
     margin: 5px 0
-    transition: all .3s ease-in-out
+    transition: all 0.3s ease-in-out
 
   &.open
     .nav-icon__bar
