@@ -44,7 +44,7 @@ const Menu = () => {
               () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
-            }>Work</Link>
+            }>Project</Link>
           </li>
           <li>
             <Link to='/blog' className='nav-link' onClick={
