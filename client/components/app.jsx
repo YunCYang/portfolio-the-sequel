@@ -6,7 +6,6 @@ import Header from './header';
 import Home from './home';
 import ProjectLog from './project-log';
 import Blog from './blog';
-import Footer from './footer';
 import Menu from './menu';
 
 const App = () => {
@@ -46,7 +45,6 @@ const App = () => {
           <Route exact path="/" render={() => <Home />} />
           <Route path="/project" render={() => <ProjectLog />} />
           <Route path="/blog" render={() => <Blog />} />
-          <Footer />
         </>
       );
     }

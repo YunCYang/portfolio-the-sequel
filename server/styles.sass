@@ -153,6 +153,9 @@ nav
     font-size: 9em
     text-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
     animation: glitch-text__reverse 0.8s forwards
+    border-bottom: $focus-color solid 0.5px
+    padding-bottom: 30px
+    margin: 0.25em 0
 
     &:hover
       animation: glitch-text 0.8s forwards
@@ -164,9 +167,88 @@ nav
     border-right: 4px $decor-color solid
     animation: blink-caret .75s step-end infinite
 
+footer
+  min-height: 30vh
+  background-color: #000
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  > *
+    font-family: $content-font
+    margin: 5px 0
+
+  .footer
+    &-title
+      font-family: $title-font
+      font-size: 1.8em
+
+    &-link
+      > *
+        margin: 0 0.5em
+
+      i
+        font-size: 1.2em
+        color: $focus-color
+
+        &:hover
+          color: $decor-color
+
+    &-code
+      > *
+        margin: 0 5px
+
+      a
+        color: $decor-color
+
+        &:hover
+          color: $content-color
+
+    &-cr
+      font-size: 0.7em
+
+@media screen and (max-width: 1200px)
+  .intro
+    h1
+      font-size: 7em
+
 @media screen and ( max-width: 1024px ) and ( max-height: 1366px )
   .pointer-ring
     display: none !important
+
+@media screen and (max-width: 950px)
+  .intro
+    h1
+      font-size: 5.5em
+
+    span
+      font-size: 1.5em
+
+@media screen and (max-width: 750px)
+  .intro
+    h1
+      font-size: 4em
+
+    span
+      font-size: 1.2em
+
+@media screen and (max-width: 550px)
+  .intro
+    h1
+      font-size: 3.5em
+      padding-bottom: 20px
+
+    span
+      font-size: 1em
+
+@media screen and (max-width: 450px)
+  .intro
+    h1
+      font-size: 2.5em
+
+    span
+      font-size: 0.8em
 
 @keyframes fadeDown
   0%
