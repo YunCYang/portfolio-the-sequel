@@ -6,10 +6,10 @@ import Contact from './contact';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <Intro />
-      <About />
       <Project />
+      <About />
       <Contact />
     </div>
   );

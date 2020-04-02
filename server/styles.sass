@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Plaster&display=swap')
+
 $background-color: #030827
 $content-color: #2772db
 $decor-color: #3ab1c8
 $focus-color: #f5ebeb
+$title-font: 'Plaster', cursive
+$content-font: 'Inter', sans-serif
 
 html,
 a
@@ -30,7 +34,7 @@ body
   height: 20px
   width: 20px
   border-radius: 100%
-  background: radial-gradient(circle farthest-side, transparent 75%, rgba(255, 255, 255, 1) 85%)
+  background: radial-gradient(circle farthest-side, transparent 85%, rgba(255, 255, 255, 1) 90%)
   mix-blend-mode: difference
   pointer-events: none
 
@@ -41,12 +45,12 @@ body
     left: -10px
     top: -10px
     transition-property: height width background
-    transition-duration: 50ms
+    transition-duration: 80ms
     transition-timing-function: ease-in-out
 
 header
   z-index: 2
-  position: relative
+  position: fixed
 
 .nav-icon
   width: 25px
@@ -63,6 +67,14 @@ header
     display: block
     margin: 5px 0
     transition: all 0.3s ease-in-out
+    box-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+    animation: glitch-box__reverse 0.8s forwards
+
+  &:hover
+    .nav-icon__bar,
+    &::before,
+    &::after
+      animation: glitch-box 0.8s forwards
 
   &.open
     .nav-icon__bar
@@ -96,14 +108,61 @@ nav
     list-style: none
 
     li
+      font-family: $content-font
+      font-size: 1.5em
       opacity: 0
-      animation: fadeDown 0.5s forwards
-      transform: translateY(-20px)
-      transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      animation: fadeDown 0.6s forwards
+      z-index: 1
+      margin: 20px 0
+      display: flex
+      justify-content: center
 
-      @for $i from 1 through 3
+      .divider
+        height: 1.2px
+        width: 8em
+        background-color: $focus-color
+        border-radius: 2px
+        margin: 20px 0
+
+      a
+        text-decoration: none
+        color: $focus-color
+
+        &:hover
+          color: $decor-color
+          transition: color 0.2s ease-in-out
+
+      @for $i from 2 through 4
         &:nth-child(#{$i})
-          animation-delay: #{$i * 0.1 + 0.1}s
+          animation-delay: #{($i - 1) * 0.1 + 0.3}s
+
+.home
+  width: 100%
+
+  & > div
+    min-height: 100vh
+    width: 100%
+
+.intro
+  display: flex
+  justify-content: center
+  align-items: center
+
+  h1
+    font-family: $title-font
+    font-size: 9em
+    text-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+    animation: glitch-text__reverse 0.8s forwards
+
+    &:hover
+      animation: glitch-text 0.8s forwards
+
+  span
+    font-family: $content-font
+    font-size: 2em
+    padding-right: 0.2em
+    border-right: 4px $decor-color solid
+    animation: blink-caret .75s step-end infinite
 
 @media screen and ( max-width: 1024px ) and ( max-height: 1366px )
   .pointer-ring
@@ -116,3 +175,33 @@ nav
   100%
     opacity: 1
     transform: translateY(0)
+
+@keyframes glitch-text
+  from
+    text-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+  to
+    text-shadow:2px 3px 0px #f0f, -3px -2px 0 #0ff
+
+@keyframes glitch-text__reverse
+  from
+    text-shadow:2px 3px 0px #f0f, -3px -2px 0 #0ff
+  to
+    text-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+
+@keyframes glitch-box
+  from
+    box-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+  to
+    box-shadow:2px 3px 0px #f0f, -3px -2px 0 #0ff
+
+@keyframes glitch-box__reverse
+  from
+    box-shadow:2px 3px 0px #f0f, -3px -2px 0 #0ff
+  to
+    box-shadow:1px 1px 0px #f0f, -1px -1px 0 #0ff
+
+@keyframes blink-caret
+  from, to
+    border-color: transparent
+  50%
+    border-color: $decor-color
