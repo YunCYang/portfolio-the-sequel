@@ -174,8 +174,8 @@ nav
   padding: 50px 0
 
   &-wrapper
-    width: 80%
-    height: 80vh
+    width: 70%
+    height: 70vh
     position: relative
 
     > span
@@ -193,19 +193,72 @@ nav
     z-index: -1
     font-family: $content-font
 
+    h3, p, span, i
+      animation: fadeLeft 1s forwards
+
   &-block
     &__info
       height: 60%
       width: 100%
       background-color: #fe346e
       transition: all 0.2s ease-in-out
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 1.2em
+
+      > div
+        width: 60%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        h3
+          font-size: 1.5em
+
+        .divider
+          width: 6%
+          border-bottom: $focus-color 1px solid
+
+        p
+          margin: 0.4em 0
 
     &__skill
       height: 40%
       width: 60%
       background-color: #00bdaa
-      color: #000
+      color: #004533
       transition: all 0.2s ease-in-out
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 1.2em
+      font-weight: 700
+
+      > div
+        width: 50vw
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 1em
+
+        &.sm
+          align-items: center
+          font-size: 1.5em
+
+        span
+          color: #2552a8
+
+        p
+          margin: 0.2em 0
+          line-height: 1.5em
+
+          &.t1
+            padding-left: 1em
+
+          &.t2
+            padding-left: 2em
 
     &__contact
       height: 40%
@@ -213,6 +266,34 @@ nav
       background-color: #f8fab8
       color: #000
       transition: all 0.2s ease-in-out
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      font-size: 1.5em
+      font-weight: 700
+
+      > div
+        width: 70%
+        height: 70%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-evenly
+
+        > div
+          width: 100%
+          display: flex
+          justify-content: space-evenly
+
+      a
+        color: #000
+
+      i
+        font-size: 3em
+
+        &:hover
+          color: $decor-color
 
   &-grid.select
     &-info
@@ -247,6 +328,7 @@ nav
           height: 85%
           width: 10%
           transition: all 0.3s ease-in-out
+          writing-mode: vertical-rl
 
     &-contact
       &__lg
@@ -260,6 +342,10 @@ nav
           height: 85%
           width: 10%
           transition: all 0.3s ease-in-out
+          writing-mode: vertical-lr
+
+          p
+            transform: rotate(180deg)
 
         .about-block__contact
           height: 85%
@@ -518,15 +604,29 @@ footer
   .about
     &-block
       &__info
-        height: 60%
+        font-size: 1.2em
+
+        > div
+          width: 80%
+
+          h3
+            font-size: 1.2em
 
       &__skill
         height: 20%
         width: 100%
+        font-size: 1.1em
+
+        > div
+          width: 70vw
+
+          &.sm
+            font-size: 1.2em
 
       &__contact
         height: 20%
         width: 100%
+        font-size: 1.2em
 
     &-grid.select
       &-info
@@ -554,6 +654,7 @@ footer
           .about-block__contact
             height: 10%
             width: 100%
+            writing-mode: horizontal-tb
 
       &-contact
         &__lg
@@ -563,6 +664,13 @@ footer
           .about-block__skill
             height: 10%
             width: 100%
+            writing-mode: horizontal-tb
+
+            > div
+              align-items: center
+
+            p
+              transform: rotate(0deg)
 
           .about-block__contact
             height: 80%
@@ -728,6 +836,21 @@ footer
     span
       font-size: 1em
 
+  .about
+    &-block
+      &__info
+        font-size: 1em
+
+        > div
+          h3
+            font-size: 1em
+
+      &__skill
+        font-size: 1em
+
+      &__contact
+        font-size: 1em
+
 @media screen and (max-width: 450px)
   .intro
     h1
@@ -735,6 +858,13 @@ footer
 
     span
       font-size: 0.8em
+
+  .about
+    &-block
+      &__skill
+        font-size: 0.9em
+
+
 
 @keyframes fadeDown
   0%
@@ -773,3 +903,11 @@ footer
     border-color: transparent
   50%
     border-color: $decor-color
+
+@keyframes fadeLeft
+  0%
+    opacity: 0
+    transform: translateX(-20px)
+  100%
+    opacity: 1
+    transform: translateY(0)
