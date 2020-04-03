@@ -26,10 +26,19 @@ const App = () => {
 
   React.useEffect(
     () => {
+      let closeMenu = false;
       if (window.location.pathname === '/') {
         if (isMenuOpen) setPageToScroll(yOffset);
-        else window.scrollTo(0, pageToScroll);
+        else {
+          closeMenu = true;
+        }
       }
+      const timer = setTimeout(
+        () => {
+          if (closeMenu) window.scrollTo(0, pageToScroll);
+        }, 360
+      );
+      return () => clearTimeout(timer);
     }, [isMenuOpen]
   );
 
