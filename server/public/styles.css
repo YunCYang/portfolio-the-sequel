@@ -168,6 +168,261 @@ nav ul li:nth-child(4) {
   animation: blink-caret 0.75s step-end infinite;
 }
 
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.about-wrapper {
+  width: 80%;
+  height: 80vh;
+  position: relative;
+}
+.about-wrapper > span {
+  position: absolute;
+  font-family: "Plaster", cursive;
+  font-size: 3em;
+  top: -0.8em;
+  left: 0.2em;
+}
+.about-grid {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+  font-family: "Inter", sans-serif;
+}
+.about-block__info {
+  height: 60%;
+  width: 100%;
+  background-color: #fe346e;
+  transition: all 0.2s ease-in-out;
+}
+.about-block__skill {
+  height: 40%;
+  width: 60%;
+  background-color: #00bdaa;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+.about-block__contact {
+  height: 40%;
+  width: 40%;
+  background-color: #f8fab8;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.select-info__lg .about-block__info {
+  height: 85%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-info__lg .about-block__skill {
+  height: 15%;
+  width: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-info__lg .about-block__contact {
+  height: 15%;
+  width: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-skill__lg .about-block__info {
+  height: 15%;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-skill__lg .about-block__skill {
+  height: 85%;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-skill__lg .about-block__contact {
+  height: 85%;
+  width: 10%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-contact__lg .about-block__info {
+  height: 15%;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-contact__lg .about-block__skill {
+  height: 85%;
+  width: 10%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.select-contact__lg .about-block__contact {
+  height: 85%;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+.about-grid.hover-info__sm .about-block__info {
+  height: 62%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__sm .about-block__skill {
+  height: 38%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__sm .about-block__contact {
+  height: 38%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__lg .about-block__info {
+  height: 87%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__lg .about-block__skill {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__lg .about-block__contact {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__skill .about-block__info {
+  height: 17%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__skill .about-block__skill {
+  height: 83%;
+  width: 90%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__skill .about-block__contact {
+  height: 83%;
+  width: 10%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__contact .about-block__info {
+  height: 17%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__contact .about-block__skill {
+  height: 83%;
+  width: 10%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-info__xs__contact .about-block__contact {
+  height: 83%;
+  width: 90%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__sm .about-block__info {
+  height: 58%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__sm .about-block__skill {
+  height: 42%;
+  width: 62%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__sm .about-block__contact {
+  height: 42%;
+  width: 38%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__lg .about-block__info {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__lg .about-block__skill {
+  height: 87%;
+  width: 92%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__lg .about-block__contact {
+  height: 87%;
+  width: 8%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__info .about-block__info {
+  height: 83%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__info .about-block__skill {
+  height: 17%;
+  width: 60%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__info .about-block__contact {
+  height: 17%;
+  width: 40%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__contact .about-block__info {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__contact .about-block__skill {
+  height: 87%;
+  width: 12%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-skill__xs__contact .about-block__contact {
+  height: 87%;
+  width: 88%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__sm .about-block__info {
+  height: 58%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__sm .about-block__skill {
+  height: 42%;
+  width: 58%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__sm .about-block__contact {
+  height: 42%;
+  width: 42%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__lg .about-block__info {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__lg .about-block__skill {
+  height: 87%;
+  width: 8%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__lg .about-block__contact {
+  height: 87%;
+  width: 92%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__info .about-block__info {
+  height: 83%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__info .about-block__skill {
+  height: 17%;
+  width: 40%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__info .about-block__contact {
+  height: 17%;
+  width: 60%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__skill .about-block__info {
+  height: 13%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__skill .about-block__skill {
+  height: 87%;
+  width: 88%;
+  transition: all 0.2s ease-in-out;
+}
+.about-grid.hover-contact__xs__skill .about-block__contact {
+  height: 87%;
+  width: 12%;
+  transition: all 0.2s ease-in-out;
+}
+
 footer {
   min-height: 30vh;
   background-color: #000;
@@ -231,6 +486,183 @@ footer .footer-cr {
   }
   .intro span {
     font-size: 1.2em;
+  }
+
+  .about-block__info {
+    height: 60%;
+  }
+  .about-block__skill {
+    height: 20%;
+    width: 100%;
+  }
+  .about-block__contact {
+    height: 20%;
+    width: 100%;
+  }
+  .about-grid.select-info__lg .about-block__info {
+    height: 80%;
+  }
+  .about-grid.select-info__lg .about-block__skill {
+    height: 10%;
+    width: 100%;
+  }
+  .about-grid.select-info__lg .about-block__contact {
+    height: 10%;
+    width: 100%;
+  }
+  .about-grid.select-skill__lg .about-block__info {
+    height: 10%;
+  }
+  .about-grid.select-skill__lg .about-block__skill {
+    height: 80%;
+    width: 100%;
+  }
+  .about-grid.select-skill__lg .about-block__contact {
+    height: 10%;
+    width: 100%;
+  }
+  .about-grid.select-contact__lg .about-block__info {
+    height: 10%;
+  }
+  .about-grid.select-contact__lg .about-block__skill {
+    height: 10%;
+    width: 100%;
+  }
+  .about-grid.select-contact__lg .about-block__contact {
+    height: 80%;
+    width: 100%;
+  }
+  .about-grid.hover-info__sm .about-block__info {
+    height: 64%;
+  }
+  .about-grid.hover-info__sm .about-block__skill {
+    height: 18%;
+    width: 100%;
+  }
+  .about-grid.hover-info__sm .about-block__contact {
+    height: 18%;
+    width: 100%;
+  }
+  .about-grid.hover-info__lg .about-block__info {
+    height: 84%;
+  }
+  .about-grid.hover-info__lg .about-block__skill {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-info__lg .about-block__contact {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-info__xs__skill .about-block__info {
+    height: 14%;
+  }
+  .about-grid.hover-info__xs__skill .about-block__skill {
+    height: 78%;
+    width: 100%;
+  }
+  .about-grid.hover-info__xs__skill .about-block__contact {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-info__xs__contact .about-block__info {
+    height: 14%;
+  }
+  .about-grid.hover-info__xs__contact .about-block__skill {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-info__xs__contact .about-block__contact {
+    height: 78%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__sm .about-block__info {
+    height: 58%;
+  }
+  .about-grid.hover-skill__sm .about-block__skill {
+    height: 24%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__sm .about-block__contact {
+    height: 18%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__lg .about-block__info {
+    height: 8%;
+  }
+  .about-grid.hover-skill__lg .about-block__skill {
+    height: 84%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__lg .about-block__contact {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__xs__info .about-block__info {
+    height: 78%;
+  }
+  .about-grid.hover-skill__xs__info .about-block__skill {
+    height: 14%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__xs__info .about-block__contact {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__xs__contact .about-block__info {
+    height: 8%;
+  }
+  .about-grid.hover-skill__xs__contact .about-block__skill {
+    height: 14%;
+    width: 100%;
+  }
+  .about-grid.hover-skill__xs__contact .about-block__contact {
+    height: 78%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__sm .about-block__info {
+    height: 58%;
+  }
+  .about-grid.hover-contact__sm .about-block__skill {
+    height: 18%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__sm .about-block__contact {
+    height: 24%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__lg .about-block__info {
+    height: 8%;
+  }
+  .about-grid.hover-contact__lg .about-block__skill {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__lg .about-block__contact {
+    height: 84%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__xs__info .about-block__info {
+    height: 78%;
+  }
+  .about-grid.hover-contact__xs__info .about-block__skill {
+    height: 8%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__xs__info .about-block__contact {
+    height: 14%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__xs__skill .about-block__info {
+    height: 8%;
+  }
+  .about-grid.hover-contact__xs__skill .about-block__skill {
+    height: 78%;
+    width: 100%;
+  }
+  .about-grid.hover-contact__xs__skill .about-block__contact {
+    height: 14%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 550px) {
