@@ -3,7 +3,10 @@ import React from 'react';
 const ProjectLog = () => {
   return (
     <div>
-      <p>Project Log</p>
+      <center>
+        <p>Project Log</p>
+        <p>Under construction!</p>
+      </center>
     </div>
   );
 };
