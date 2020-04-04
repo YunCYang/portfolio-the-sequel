@@ -44,7 +44,7 @@ const Menu = () => {
               () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
-            }>Project</Link>
+            }>Project (Under Construction!)</Link>
           </li>
           <li>
             <Link to='/blog' className='nav-link' onClick={
@@ -60,7 +60,7 @@ const Menu = () => {
               () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
-            }>Blog</Link>
+            }>Blog (Under Construction!)</Link>
           </li>
           <li>
             <div className="divider"></div>
