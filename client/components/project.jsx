@@ -1,25 +1,9 @@
 import React from 'react';
 import ProjectCard from './project-card';
 import { Link } from 'react-router-dom';
+import projectList from '../../database/project-list';
 
 const Project = () => {
-  const projectList = [
-    {
-      name: 'Lacerna',
-      img: './images/lacerna.png',
-      desc: 'A demo e-commerce site developed with ReactJs',
-      github: 'https://github.com/YunCYang/lacerna',
-      live: 'https://lacerna.yuncyang.com/'
-    },
-    {
-      name: 'Sudo-Ku',
-      img: './images/sudo-ku.png',
-      desc: 'A sudoku game that recursively creates puzzle',
-      github: 'https://github.com/YunCYang/sudo-ku',
-      live: 'https://sudo-ku.yuncyang.com/'
-    }
-  ];
-
   const renderList = () => {
     return projectList.map(item => <ProjectCard key={item.name} proj={item} />);
   };
