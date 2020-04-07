@@ -14,7 +14,7 @@ const Project = () => {
         {renderList()}
       </div>
       <div className='project-link'>
-        <Link to='/project' onMouseOver={
+        <Link to='/project/lacerna' onMouseOver={
           () => {
             document.getElementsByClassName('pointer-ring')[0].classList.add('link');
           }
@@ -23,7 +23,7 @@ const Project = () => {
             document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
           }
         }>
-          <span>See all projects</span>
+          <span>See project detail</span>
           <i className="fas fa-arrow-circle-right"></i>
         </Link>
       </div>

@@ -1,14 +1,21 @@
 import React from 'react';
+// import projectList from '../../database/project-list';
+import { withRouter } from 'react-router-dom';
 
-const ProjectDetail = () => {
+const ProjectDetail = props => {
+  // console.log(props.location.pathname);
+
   return (
-    <div>
-      <center>
-        <p>Project Detail</p>
-        <p>Under construction!</p>
-      </center>
+    <div className='detail'>
+      <div className='detail-img'></div>
+      <div className='detail-text'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };
 
-export default ProjectDetail;
+export default withRouter(ProjectDetail);
