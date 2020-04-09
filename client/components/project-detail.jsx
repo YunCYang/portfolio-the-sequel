@@ -94,10 +94,34 @@ const ProjectDetail = props => {
         </div>
         <div className='detail-text__link'>
           <div>
-            <i className="fas fa-window-maximize"></i>
+            <a href={currentProj.live} target="_blank"
+              rel="noopener noreferrer" onMouseOver={
+                () => {
+                  document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+                }
+              } onMouseLeave={
+                () => {
+                  document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+                }
+              }>
+              <i className="fas fa-window-maximize"></i>
+              <span>Live Link</span>
+            </a>
           </div>
           <div>
-            <i className="fab fa-github-square"></i>
+            <a href={currentProj.github} target="_blank"
+              rel="noopener noreferrer" onMouseOver={
+                () => {
+                  document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+                }
+              } onMouseLeave={
+                () => {
+                  document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+                }
+              }>
+              <i className="fab fa-github-square"></i>
+              <span>GitHub</span>
+            </a>
           </div>
         </div>
       </div>
