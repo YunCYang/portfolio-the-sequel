@@ -12,7 +12,7 @@ const ProjectCard = props => {
         document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
       }
     } onClick={
-      () => props.history.push('/project')
+      () => props.history.push(`/project/${props.proj.name.toLowerCase()}`)
     }>
       <div className="card-wrapper" style={{ backgroundImage: `url(${props.proj.img})` }}>
         <span className='name'>{props.proj.name}</span>

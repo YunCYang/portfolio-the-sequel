@@ -611,6 +611,69 @@ footer .footer-cr {
   font-size: 0.7em;
 }
 
+.project-log {
+  width: 100%;
+}
+
+.detail {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.detail-img {
+  width: 60%;
+  height: 100%;
+  background-color: #f0f;
+}
+.detail-text {
+  width: 40%;
+  height: 100%;
+  padding: 25px;
+  font-family: "Inter", sans-serif;
+}
+.detail-text__header {
+  display: flex;
+  justify-content: space-between;
+}
+.detail-text__header__nav i {
+  margin-left: 20px;
+}
+.detail-text__tech {
+  font-size: 0.8em;
+  display: flex;
+}
+.detail-text__tech > div {
+  background-color: #2772db;
+  padding: 3px 5px;
+  margin: 10px 10px 5px 0;
+  border-radius: 5px;
+}
+.detail-text__link {
+  margin-top: 20px;
+  display: flex;
+}
+.detail-text__link a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+  text-decoration: none;
+  color: #f5ebeb;
+}
+.detail-text__link a i {
+  font-size: 2.5em;
+}
+.detail-text__link a span {
+  font-size: 0.7em;
+  margin-top: 10px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.detail-text__link a:hover span {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
 @media screen and (max-width: 1200px) {
   .intro h1 {
     font-size: 7em;
@@ -849,6 +912,18 @@ footer .footer-cr {
     height: 14%;
     width: 100%;
   }
+
+  .detail {
+    flex-direction: column;
+  }
+  .detail-img {
+    width: 100%;
+    height: 40%;
+  }
+  .detail-text {
+    width: 100%;
+    height: 60%;
+  }
 }
 @media screen and (max-width: 550px) {
   .intro h1 {
@@ -877,6 +952,22 @@ footer .footer-cr {
   }
   .about-block__contact {
     font-size: 1em;
+  }
+
+  .detail-text__title {
+    font-size: 0.8em;
+  }
+  .detail-text__title h1 {
+    margin: 0.4em 0;
+  }
+  .detail-text__detail {
+    font-size: 0.8em;
+  }
+  .detail-text__link {
+    margin-top: 15px;
+  }
+  .detail-text__link a i {
+    font-size: 2em;
   }
 }
 @media screen and (max-width: 450px) {

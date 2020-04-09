@@ -1,14 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import ProjectDetail from './project-detail';
 
-const ProjectLog = () => {
+const ProjectLog = props => {
   return (
-    <div>
-      <center>
-        <p>Project Log</p>
-        <p>Under construction!</p>
-      </center>
+    <div className='project-log'>
+      <ProjectDetail />
     </div>
   );
 };
 
-export default ProjectLog;
+export default withRouter(ProjectLog);
