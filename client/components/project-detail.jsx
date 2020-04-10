@@ -34,9 +34,23 @@ const ProjectDetail = props => {
     } else return null;
   };
 
+  const renderImg = () => {
+    if (currentProj) {
+      return currentProj.imgArr.map(img => {
+        return (
+          <img key={img} src={img}/>
+        );
+      });
+    }
+  };
+
   return (
     <div className='detail'>
-      <div className='detail-img'></div>
+      <div className='detail-img'>
+        <div className="detail-img__swiper">
+          {renderImg()}
+        </div>
+      </div>
       <div className='detail-text'>
         <div className='detail-text__header'>
           <div className='detail-text__header__back'>
