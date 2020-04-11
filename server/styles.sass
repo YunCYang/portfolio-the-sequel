@@ -670,7 +670,21 @@ footer
   &-img
     width: 60%
     height: 100%
-    background-color: #f0f
+    overflow: hidden
+
+    &__swiper
+      width: 100%
+      height: 100%
+      display: flex
+      overflow-x: visible
+      transition-property: transform
+      will-change: transform
+      transition: transform 0.3s ease-in-out
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
 
   &-text
     width: 40%
@@ -682,9 +696,17 @@ footer
       display: flex
       justify-content: space-between
 
+      &__back
+        i
+          &:hover
+            color: $decor-color
+
       &__nav
         i
           margin-left: 20px
+
+          &:hover
+            color: $decor-color
 
     &__tech
       font-size: 0.8em
@@ -711,9 +733,13 @@ footer
         i
           font-size: 2.5em
 
+          &:hover
+            color: $decor-color
+
         span
           font-size: 0.7em
           margin-top: 10px
+          color: $decor-color
           opacity: 0
           transition: all 0.2s ease-in-out
 

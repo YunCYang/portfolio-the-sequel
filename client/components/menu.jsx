@@ -31,7 +31,7 @@ const Menu = () => {
             }>Home</Link>
           </li>
           <li>
-            <Link to='/project' className='nav-link' onClick={
+            <Link to='/project/lacerna' className='nav-link' onClick={
               () => {
                 dispatch({ type: SHOW_MENU, payload: !isMenuOpen });
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
@@ -44,7 +44,7 @@ const Menu = () => {
               () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
-            }>Project (Under Construction!)</Link>
+            }>Project</Link>
           </li>
           <li>
             <Link to='/blog' className='nav-link' onClick={
