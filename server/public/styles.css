@@ -632,6 +632,7 @@ footer .footer-cr {
   overflow-x: visible;
   transition-property: transform;
   will-change: transform;
+  transition: transform 0.3s ease-in-out;
 }
 .detail-img__swiper img {
   height: 100%;

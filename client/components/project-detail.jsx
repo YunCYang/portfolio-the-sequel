@@ -6,7 +6,10 @@ const ProjectDetail = props => {
   const [currentProj, setCurrentProj] = React.useState('');
   const [prevProj, setPrevProj] = React.useState('');
   const [nextProj, setNextProj] = React.useState('');
+  const [movement, setMovement] = React.useState(0);
   const projList = projectList;
+  const [pagewidth, setPageWidth] = React.useState(0);
+  let lastTouch = 0;
 
   React.useEffect(
     () => {
@@ -44,10 +47,50 @@ const ProjectDetail = props => {
     }
   };
 
+  const handleMovement = (delta, method) => {
+    const maxLength = currentProj.imgArr.length - 1;
+    const singleWidth = document.getElementsByClassName('detail-img__swiper')[0].getBoundingClientRect().width;
+    setPageWidth(singleWidth);
+    let nextMovement = movement + delta;
+
+    if (nextMovement < 0) {
+      nextMovement = 0;
+    }
+
+    if (nextMovement > maxLength * singleWidth) {
+      nextMovement = maxLength * singleWidth;
+    }
+
+    // console.log(nextMovement / singleWidth);
+
+    if (method === 'wheel') setMovement(nextMovement);
+    // else setMovement(Math.ceil(nextMovement / singleWidth) * singleWidth);
+  };
+
+  const handleWheel = e => handleMovement(e.deltaY, 'wheel');
+
+  const handleTouchStart = e => {
+    lastTouch = e.nativeEvent.touches[0].clientX;
+  };
+
+  const handleTouchMove = e => {
+    const delta = lastTouch - e.nativeEvent.touches[0].clientX;
+    lastTouch = e.nativeEvent.touches[0].clientX;
+
+    handleMovement(delta, 'touch');
+  };
+
+  const handleTouchEnd = () => {
+    lastTouch = 0;
+  };
+
   return (
     <div className='detail'>
-      <div className='detail-img'>
-        <div className="detail-img__swiper">
+      <div className='detail-img' onWheel={handleWheel} onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className="detail-img__swiper" style={{
+          transform: `translateX(${Math.floor(movement / pagewidth) * 100 * -1}%)`
+        }}>
           {renderImg()}
         </div>
       </div>
