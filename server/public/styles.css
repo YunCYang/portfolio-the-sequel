@@ -635,7 +635,6 @@ footer .footer-cr {
   transition: transform 0.3s ease-in-out;
 }
 .detail-img__swiper img {
-  height: 100%;
   width: 100%;
   object-fit: cover;
 }

@@ -9,7 +9,8 @@ const ProjectDetail = props => {
   const [movement, setMovement] = React.useState(0);
   const projList = projectList;
   const [pagewidth, setPageWidth] = React.useState(0);
-  let lastTouch = 0;
+  let touchStart = 0;
+  let touchEnd = 0;
 
   React.useEffect(
     () => {
@@ -61,27 +62,22 @@ const ProjectDetail = props => {
       nextMovement = maxLength * singleWidth;
     }
 
-    // console.log(nextMovement / singleWidth);
-
     if (method === 'wheel') setMovement(nextMovement);
-    // else setMovement(Math.ceil(nextMovement / singleWidth) * singleWidth);
+    else setMovement(nextMovement);
   };
 
   const handleWheel = e => handleMovement(e.deltaY, 'wheel');
 
   const handleTouchStart = e => {
-    lastTouch = e.nativeEvent.touches[0].clientX;
+    touchStart = e.nativeEvent.touches[0].clientX;
   };
 
   const handleTouchMove = e => {
-    const delta = lastTouch - e.nativeEvent.touches[0].clientX;
-    lastTouch = e.nativeEvent.touches[0].clientX;
-
-    handleMovement(delta, 'touch');
+    touchEnd = e.nativeEvent.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    lastTouch = 0;
+    handleMovement(touchStart - touchEnd, 'touch');
   };
 
   return (
