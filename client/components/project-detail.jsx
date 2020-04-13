@@ -38,7 +38,7 @@ const ProjectDetail = props => {
     } else return null;
   };
 
-  const renderImg = () => {
+  const renderImgArr = () => {
     if (currentProj) {
       return currentProj.imgArr.map(img => {
         return (
@@ -80,6 +80,12 @@ const ProjectDetail = props => {
     handleMovement(touchStart - touchEnd, 'touch');
   };
 
+  const renderImg = () => {
+    if (currentProj) {
+      return <img key={`img-${currentProj.imgArr[Math.floor(movement / pagewidth)]}`} src={currentProj.imgArr[Math.floor(movement / pagewidth) || 0]} />;
+    } else return null;
+  };
+
   return (
     <div className='detail'>
       <div className='detail-img' onWheel={handleWheel} onTouchStart={handleTouchStart}
@@ -87,7 +93,7 @@ const ProjectDetail = props => {
         <div className="detail-img__swiper" style={{
           transform: `translateX(${Math.floor(movement / pagewidth) * 100 * -1}%)`
         }}>
-          {renderImg()}
+          {renderImgArr()}
         </div>
       </div>
       <div className='detail-text'>
@@ -175,6 +181,15 @@ const ProjectDetail = props => {
               <i className="fab fa-github-square"></i>
               <span>GitHub</span>
             </a>
+          </div>
+        </div>
+      </div>
+      <div className="detail-modal">
+        <div className="detail-modal__container">
+          {renderImg()}
+          <div className="detail-modal__controls">
+            <div className="detail-modal__controls__prev"></div>
+            <div className="detail-modal__controls__next"></div>
           </div>
         </div>
       </div>
