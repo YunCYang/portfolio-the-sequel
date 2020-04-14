@@ -644,9 +644,12 @@ footer .footer-cr {
   height: 100vh;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+.detail-modal.shown {
+  display: flex;
 }
 .detail-modal__container {
   width: 80%;
@@ -655,7 +658,6 @@ footer .footer-cr {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #f0f;
 }
 .detail-modal__container img {
   width: 100%;
@@ -672,7 +674,12 @@ footer .footer-cr {
   opacity: 0.5;
   z-index: 3;
   outline: 0;
-  top: 50%;
+  top: 45%;
+  transition: all 0.3s ease-in-out;
+}
+.detail-modal__controls div:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
 }
 .detail-modal__controls__prev {
   left: 12%;
