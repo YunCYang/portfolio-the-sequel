@@ -209,6 +209,14 @@ const ProjectDetail = props => {
                   setModalImage(pagewidth * currentProj.imgArr.length - 1);
                 }
               }
+            } onMouseOver={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+              }
+            } onMouseLeave={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+              }
             }></div>
             <div className="detail-modal__controls__next" onClick={
               () => {
@@ -217,6 +225,14 @@ const ProjectDetail = props => {
                 } else {
                   setModalImage(0);
                 }
+              }
+            } onMouseOver={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+              }
+            } onMouseLeave={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
             }></div>
           </div>

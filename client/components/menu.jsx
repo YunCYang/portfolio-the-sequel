@@ -60,7 +60,7 @@ const Menu = () => {
               () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
-            }>Blog (Under Construction!)</Link>
+            }>Blog</Link>
           </li>
           <li>
             <div className="divider"></div>

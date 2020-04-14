@@ -5,8 +5,10 @@ const Blog = () => {
   return (
     <>
       <div className='blog'>
-        <div></div>
-        <div></div>
+        <header>
+          <span>BLOG</span>
+        </header>
+        <div className='blog-log'></div>
       </div>
       <Footer />
     </>
