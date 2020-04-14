@@ -3,13 +3,15 @@ import Footer from './footer';
 
 const Blog = () => {
   return (
-    <div className='blog'>
-      <center>
-        <p>Blog</p>
-        <p>Under construction!</p>
-      </center>
+    <>
+      <div className='blog'>
+        <header>
+          <span>BLOG</span>
+        </header>
+        <div className='blog-log'></div>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

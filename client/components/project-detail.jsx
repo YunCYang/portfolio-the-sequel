@@ -8,7 +8,8 @@ const ProjectDetail = props => {
   const [nextProj, setNextProj] = React.useState('');
   const [movement, setMovement] = React.useState(0);
   const projList = projectList;
-  const [pagewidth, setPageWidth] = React.useState(0);
+  const [pagewidth, setPageWidth] = React.useState(1);
+  const [modalImage, setModalImage] = React.useState(0);
   let touchStart = 0;
   let touchEnd = 0;
 
@@ -38,11 +39,16 @@ const ProjectDetail = props => {
     } else return null;
   };
 
-  const renderImg = () => {
+  const renderImgArr = () => {
     if (currentProj) {
       return currentProj.imgArr.map(img => {
         return (
-          <img key={img} src={img}/>
+          <img key={img} src={img} onClick={
+            () => {
+              document.getElementsByClassName('detail-modal')[0].classList.add('shown');
+              setModalImage(movement);
+            }
+          }/>
         );
       });
     }
@@ -80,6 +86,12 @@ const ProjectDetail = props => {
     handleMovement(touchStart - touchEnd, 'touch');
   };
 
+  const renderImg = () => {
+    if (currentProj) {
+      return <img src={currentProj.imgArr[Math.floor(modalImage / pagewidth) || 0]} />;
+    } else return null;
+  };
+
   return (
     <div className='detail'>
       <div className='detail-img' onWheel={handleWheel} onTouchStart={handleTouchStart}
@@ -87,7 +99,7 @@ const ProjectDetail = props => {
         <div className="detail-img__swiper" style={{
           transform: `translateX(${Math.floor(movement / pagewidth) * 100 * -1}%)`
         }}>
-          {renderImg()}
+          {renderImgArr()}
         </div>
       </div>
       <div className='detail-text'>
@@ -175,6 +187,54 @@ const ProjectDetail = props => {
               <i className="fab fa-github-square"></i>
               <span>GitHub</span>
             </a>
+          </div>
+        </div>
+      </div>
+      <div className="detail-modal" onClick={
+        e => {
+          if (e.target.className === 'detail-modal shown') {
+            document.getElementsByClassName('detail-modal')[0].classList.remove('shown');
+            setModalImage(movement);
+          }
+        }
+      }>
+        <div className="detail-modal__container">
+          {renderImg()}
+          <div className="detail-modal__controls">
+            <div className="detail-modal__controls__prev" onClick={
+              () => {
+                if (modalImage / pagewidth >= 1) {
+                  setModalImage(modalImage - pagewidth);
+                } else {
+                  setModalImage(pagewidth * currentProj.imgArr.length - 1);
+                }
+              }
+            } onMouseOver={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+              }
+            } onMouseLeave={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+              }
+            }></div>
+            <div className="detail-modal__controls__next" onClick={
+              () => {
+                if (modalImage / pagewidth < currentProj.imgArr.length - 1) {
+                  setModalImage(modalImage + pagewidth);
+                } else {
+                  setModalImage(0);
+                }
+              }
+            } onMouseOver={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+              }
+            } onMouseLeave={
+              () => {
+                document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+              }
+            }></div>
           </div>
         </div>
       </div>
