@@ -28,7 +28,7 @@ const projectList = [
     github: '',
     codepen: 'https://codepen.io/Redlark/details/mdeVzwz',
     live: 'https://codepen.io/Redlark/details/mdeVzwz',
-    desc: 'A dice animation that randomly generates results',
+    desc: 'A dice animation that randomly generates result',
     detail: 'Dicey Situation is a simple simulation of dice rolling animation. Including commonly used coin and d6, as well as less commonly used d4, d8, d10, d00, d12, and d20. The animation is created using Sass and pure JavaScript.',
     img: './images/dicey-situation.png',
     imgArr: ['/images/dicey-situation.png']
