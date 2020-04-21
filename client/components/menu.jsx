@@ -46,7 +46,7 @@ const Menu = () => {
               }
             }>Project</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/blog' className='nav-link' onClick={
               () => {
                 dispatch({ type: SHOW_MENU, payload: !isMenuOpen });
@@ -61,7 +61,7 @@ const Menu = () => {
                 document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
               }
             }>Blog</Link>
-          </li>
+          </li> */}
           <li>
             <div className="divider"></div>
           </li>
