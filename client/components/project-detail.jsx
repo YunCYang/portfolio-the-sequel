@@ -92,6 +92,42 @@ const ProjectDetail = props => {
     } else return null;
   };
 
+  const renderLink = () => {
+    if (currentProj.github) {
+      return (
+        <a href={currentProj.github} target="_blank"
+          rel="noopener noreferrer" onMouseOver={
+            () => {
+              document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+            }
+          } onMouseLeave={
+            () => {
+              document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+            }
+          }>
+          <i className="fab fa-github-square"></i>
+          <span>GitHub</span>
+        </a>
+      );
+    } else {
+      return (
+        <a href={currentProj.codepen} target="_blank"
+          rel="noopener noreferrer" onMouseOver={
+            () => {
+              document.getElementsByClassName('pointer-ring')[0].classList.add('link');
+            }
+          } onMouseLeave={
+            () => {
+              document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
+            }
+          }>
+          <i className="fab fa-codepen"></i>
+          <span>GitHub</span>
+        </a>
+      );
+    }
+  };
+
   return (
     <div className='detail'>
       <div className='detail-img' onWheel={handleWheel} onTouchStart={handleTouchStart}
@@ -174,19 +210,7 @@ const ProjectDetail = props => {
             </a>
           </div>
           <div>
-            <a href={currentProj.github} target="_blank"
-              rel="noopener noreferrer" onMouseOver={
-                () => {
-                  document.getElementsByClassName('pointer-ring')[0].classList.add('link');
-                }
-              } onMouseLeave={
-                () => {
-                  document.getElementsByClassName('pointer-ring')[0].classList.remove('link');
-                }
-              }>
-              <i className="fab fa-github-square"></i>
-              <span>GitHub</span>
-            </a>
+            {renderLink()}
           </div>
         </div>
       </div>
