@@ -32,6 +32,17 @@ const projectList = [
     detail: 'Dicey Situation is a simple simulation of dice rolling animation. Including commonly used coin and d6, as well as less commonly used d4, d8, d10, d00, d12, and d20. The animation is created using Sass and pure JavaScript.',
     img: './images/dicey-situation.png',
     imgArr: ['/images/dicey-situation.png']
+  }, {
+    id: 4,
+    name: 'Iron Journal',
+    tech: ['React', 'Node', 'Sass', 'Jest'],
+    github: 'https://github.com/YunCYang/iron-journal',
+    codepen: '',
+    live: 'https://iron-journal.yuncyang.com/',
+    desc: 'A web assistant for table RPG IronSworn',
+    detail: 'An assistant for people who enjoys the RPG game Ironsworn and who also wish they can store the information about their characters online. User can both create an account, or user the website as a guest.',
+    img: './images/iron-journal_title.png',
+    imgArr: ['/images/iron-journal_title.png', '/images/iron-journal_character.png']
   }
 ];
 
